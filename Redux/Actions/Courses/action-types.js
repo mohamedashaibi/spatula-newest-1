@@ -1,0 +1,12 @@
+export const GET_ALL_COURSES = "GET_ALL_COURSES";
+export const GET_ADVERTS = "GET_ADVERTS";
+export const GET_COURSES = "GET_COURSES";
+export const GET_COURSE = "GET_COURSE";
+export const COURSE_ERROR = "COURSE_ERROR";
+export const CLEAR_COURSES = "CLEAR_COURSES";
+export const IS_LOADING = "IS_LOADING";
+export const ADD_COURSE = "ADD_COURSE";
+export const GET_LESSONS = "GET_LESSONS";
+export const GET_LESSON = "GET_LESSON";
+export const GET_TRANSACTION = "GET_TRANSACTION";
+export const FINISH_TRANSACTION = "FINISH_TRANSACTION";
