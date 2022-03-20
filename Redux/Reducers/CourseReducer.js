@@ -10,7 +10,8 @@ const initialState = {
     transactionId: "",
     isLoading: true, 
     topAds: [],
-    bottomAds: []
+    bottomAds: [],
+    operationStatusCode: ''
 }
 
 export const CourseReducer = (state=initialState, action) => {
@@ -34,7 +35,18 @@ export const CourseReducer = (state=initialState, action) => {
         case GET_COURSE:
             return({...state, course: {...payload}, allcourses:[], isLoading: false})
         case CLEAR_COURSES:
-            return({...state, allcourses: [], course: {}, isLoading: true})
+            console.log("in clear courses")
+            return({...state,
+                allcourses: [],
+                usercourses: [],
+                course:{},
+                error:{},
+                lessons: [],
+                lesson: {},
+                transactionId: "",
+                isLoading: false,
+                operationStatusCode: ''
+            })
         case GET_LESSONS:
             return ({...state, lessons: [...payload], isLoading: false, });    
         case GET_LESSON:
@@ -44,7 +56,7 @@ export const CourseReducer = (state=initialState, action) => {
         case GET_TRANSACTION:
             return({...state, transactionId: payload, isLoading: false})
         case FINISH_TRANSACTION:
-            return({...state, transactionId: '', isLoading: false})    
+            return({...state, transactionId: '', operationStatusCode: payload.operationStatusCode + '', isLoading: false})    
         case GET_ADVERTS:
             return({...state, topAds: [...payload.tops], bottomAds: [...payload.bottom], isLoading: false})   
         default:

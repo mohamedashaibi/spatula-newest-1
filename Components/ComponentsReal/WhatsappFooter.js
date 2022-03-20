@@ -3,12 +3,13 @@ import { Button, Image, Linking, SafeAreaViewComponent, Text, View, TouchableOpa
 
 export const WhatsappFooter = () => {
     return (
-        <View style={{ backgroundColor: "#3dc4d5", height: 60 }}>
+        <View style={{ backgroundColor: "#3dc4d5", height: 60, display: 'flex', 
+        justifyContent: 'center', alignContent: 'center' }}>
             <TouchableOpacity
              style={{ direction: 'rtl', display: 'flex', flexDirection: "row-reverse", 
-             alignItems: 'center' }}
+             alignItems: 'center', alignContent: 'center' }}
             onPress={()=>{
-                Linking.openURL('whatsapp://send?text=hello&phone=+218945367550')
+                Linking.openURL('https://wa.me/218945367550')
             }}
             >
                 <Image 
@@ -16,16 +17,17 @@ export const WhatsappFooter = () => {
                 resizeMode:"cover",
                 marginTop: 5,
                 marginRight: 5,
+                marginBottom: 5,
                 marginLeft: 5,
-                width: 40,
-                height: 40,
+                width: 30,
+                height: 30,
                 padding: 10,
-                borderRadius: 200,
             }}
             source={require("../../assets/images/whatsapplogo.png")}
             
             />
-            <Text adjustsFontSizeToFit style={{ fontSize: 23, color: "white", paddingTop: 10, fontFamily: 'Lateef'   }}>للمساعدة, اضغظي هنا للتواصل عبر الواتساب</Text>
+            <Text adjustsFontSizeToFit style={{ alignSelf: 'center', fontSize: 16, color: "white", 
+             includeFontPadding: false, fontFamily: 'AmiriBold'   }}>للمساعدة, اضغطي هنا للتواصل عبر الواتساب</Text>
             </TouchableOpacity>
         </View>
     );

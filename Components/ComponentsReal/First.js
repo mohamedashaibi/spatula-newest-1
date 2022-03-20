@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { ActivityIndicator, Dimensions, Image, StyleSheet, View } from 'react-native'
+import Loading from '../Loading';
 
 function First(props) {
 

@@ -18,6 +18,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector, useDispatch } from 'react-redux';
 import Copyright from '../ComponentsReal/Copyright';
 import {Logout} from '../../Redux/Actions/Auth/actions'
+import { Linking } from 'react-native';
 
 export function DrawerContent(props){
 
@@ -32,18 +33,20 @@ export function DrawerContent(props){
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'column', justifyContent: 'center',
                         textAlign: 'center',marginTop: 15}}>
+                            <View style={{ display: 'flex',
+                             justifyContent: 'center', alignContent: 'center', alignItems: 'center'}}>
                             <Avatar.Image 
                                 source={{
                                     uri: selector.auth.user.image
                                 }}
                                 size={100}
-                                style={{ alignSelf: 'center' }}
                             />
-                            <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.title}>
-                                    
+                            </View>
+                            <View style={{ flexDirection:'column', alignContent: 'center'}}>
+                                <Title style={{textAlign: 'center'}}>
+                                    {selector.auth.user.name}
                                 </Title>
-                                <Title style={{  textAlign: 'center', paddingBottom: 20, fontSize:25, fontFamily:'Lateef' }}>
+                                <Title style={{textAlign:'center'}}>
                                     عضو/ة منذ {selector.auth.user.date}
                                 </Title>
                             </View>
@@ -57,43 +60,12 @@ export function DrawerContent(props){
                         >
                         <DrawerItem
                             icon={({color, size}) => (
-                                <Image source={require('../../assets/images/icon/download.png')} style={{ width: 20, height: 20, resizeMode: 'contain'}}/>
+                                <Image source={require('../../assets/images/icon/download.png')} style={{ width: 35, height: 35, resizeMode: 'contain'}}/>
                             )}
                             label=""
                             
                         />
                         <Text style={styles.drawerItemText}>الرئيسية</Text>
-                        </TouchableOpacity>
-                       
-                        <TouchableOpacity style={styles.drawerItem}
-                            onPress={() => {props.navigation.navigate('FreeCourses')}}
-                        
-                        >
-
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Image source={require('../../assets/images/icon/feedback.png')} style={{ width: 20, height: 20, resizeMode: 'contain'}}/>
-
-                            )}
-                            label=""
-                        />
-                        <Text style={styles.drawerItemText}>الكورسات المجانية</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity  style={styles.drawerItem}
-                            onPress={() => {props.navigation.navigate('PaidCourses')}}
-                        
-                        >
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
-                                name="book" 
-                                color={color}
-                                size={size}
-                                />
-                            )}
-                            label=""
-                        />
-                        <Text style={styles.drawerItemText}>الكورسات المدفوعة</Text>
                         </TouchableOpacity>
                         <TouchableOpacity  style={styles.drawerItem}
                             onPress={() => {props.navigation.navigate('MyCourses')}}
@@ -101,12 +73,53 @@ export function DrawerContent(props){
                         >
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Image source={require('../../assets/images/icon/purchases.png')} style={{ width: 20, height: 20, resizeMode: 'contain'}}/>
-
+                                <Image source={require('../../assets/images/icon/purchases.png')} style={{ width: 35, height: 35, resizeMode: 'contain'}}/>
                             )}
                             label=""
                         />
                         <Text style={styles.drawerItemText}>الدورات المشتراه</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.drawerItem}
+                            onPress={() => {props.navigation.navigate('FreeCourses')}}
+                        
+                        >
+
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Image source={require('../../assets/images/icon/feedback.png')} style={{ width: 35, height: 35, resizeMode: 'contain'}}/>
+
+                            )}
+                            label=""
+                        />
+                        <Text style={styles.drawerItemText}>شاركي رأيك حول التطبيق</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.drawerItem}
+                            onPress={() => {Linking.openURL('https://spatulagroup.com')}}
+                        
+                        >
+
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Image source={require('../../assets/images/icon/help.png')} style={{ width: 35, height: 35, resizeMode: 'contain'}}/>
+
+                            )}
+                            label=""
+                        />
+                        <Text style={styles.drawerItemText}>المساعدة</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.drawerItem}
+                            onPress={() => {Linking.openURL('https://spatulagroup.com/privacy.html')}}
+                        
+                        >
+
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Image source={require('../../assets/images/icon/privacy.png')} style={{ width: 40, height: 40, resizeMode: 'contain'}}/>
+
+                            )}
+                            label=""
+                        />
+                        <Text style={styles.drawerItemText}>سياية الخصوصية</Text>
                         </TouchableOpacity>
                         <TouchableOpacity  style={styles.drawerItem}
                             onPress={() => {dispatch(Logout())}}
@@ -114,7 +127,7 @@ export function DrawerContent(props){
                         >
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Image source={require('../../assets/images/icon/log-out.png')} style={{ width: 20, height: 20, resizeMode: 'contain'}}/>
+                                <Image source={require('../../assets/images/icon/log-out.png')} style={{ width: 35, height: 35, resizeMode: 'contain'}}/>
 
                             )}
                             label=""
@@ -137,7 +150,7 @@ const styles = StyleSheet.create({
     },
     userInfoSection: {
         textAlign: 'center',
-      paddingLeft: 20,
+        paddingBottom: 20
     },
     title: {
         textAlign: 'center',
@@ -151,7 +164,7 @@ const styles = StyleSheet.create({
       lineHeight: 14,
     },
     row: {
-      marginTop: 20,
+      marginTop: 35,
       flexDirection: 'row-reverse',
       alignItems: 'center',
     },
@@ -190,8 +203,8 @@ const styles = StyleSheet.create({
         
     },
     drawerItemText:{
-        
-        fontSize: 25,
-        fontFamily: 'Lateef'
+        color: '#666',
+        fontSize: 20,
+        fontFamily: 'AmiriBold'
     }
   });

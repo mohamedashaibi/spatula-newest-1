@@ -99,8 +99,10 @@ export const ConfirmPayment = (course_id, pinCode, transactionId) => async(dispa
         dispatch({type: IS_LOADING})
 
         const {data} = await api.ConfirmPayment(course_id, pinCode, transactionId);
+        data.operationStatusCode += '';
+        console.log("in actions = " +JSON.stringify(data))
 
-        dispatch({type: FINISH_TRANSACTION})
+        dispatch({type: FINISH_TRANSACTION, payload: {...data}})
     }catch(error){
         dispatch({type: COURSE_ERROR, payload: {error}})
     }
@@ -133,6 +135,5 @@ export const GetLesson = (id) => async(dispatch) => {
     }
 
 export const ClearCourses = () => async(dispatch) => {
-    dispatch({type: CLEAR_COURSES})
+   await dispatch({type: CLEAR_COURSES})
 } 
-

@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "spatulafinal",
+    "name": "سباتولا",
     "slug": "spatulafinal",
-    "version": "1.0.0",
+    "version": "12.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/spatulapng.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,12 +22,13 @@
     "android": {
       "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.alsahl.spatula"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/images/spatulapng.png"
     }
   }
 }

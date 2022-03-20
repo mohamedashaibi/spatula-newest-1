@@ -17,17 +17,25 @@ import { AppState } from 'react-native';
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import { useFonts } from "@use-expo/font";
+import * as Localization from 'expo-localization';
+import { I18nManager } from "react-native";
+
+I18nManager.forceRTL(false);
+I18nManager.allowRTL(false);
+I18nManager.swapLeftAndRightInRTL(false);
 
 const Stack = createNativeStackNavigator();
-
 const App2 = () => {
+
+  useEffect(()=>{
+  },[])
 
   const state = useSelector(state => state.auth)
   return (  
     <Provider store={store} context={React.createContext()}>
 
       <NavigationContainer>    
-      <Stack.Navigator initialRouteName={(state.auth.token==""||state.auth.token==null)&&state.isLoading==false ?"First":"Nav"} screenOptions={{ orientation: 'portrait' }}>        
+      <Stack.Navigator initialRouteName={(state.auth.token==""||state.auth.token==null)&&state.isLoading==false ?"First":"Nav"} screenOptions={{ orientation: 'portrait' }} >        
         <Stack.Screen name="Nav" component={CustomNavigation} options={{ headerShown: false, orientation: 'portrait' }}/>        
         <Stack.Screen name="First" component={First} options={{ headerShown: false}}/>        
         <Stack.Screen name="Second" component={EnterScreen2} options={{ headerShown: false}}/>        
@@ -58,7 +66,7 @@ const App = () =>{
   },[])
 
   return (
-    <Provider store={store} >
+    <Provider store={store}>
       {!isLoading?null:<App2/>}
     </Provider>
   );

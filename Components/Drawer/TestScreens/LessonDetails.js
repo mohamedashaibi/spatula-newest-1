@@ -24,7 +24,7 @@ function LessonDetails(props) {
     },[])
 
     return (
-        <View style={{  flex: 4 }}>
+        <View style={{  flex: 4, backgroundColor: 'white' }}>
             {loading?<Loading/>:
             <>
             <View style={{ flex: 1, padding: 0 }}>
@@ -43,7 +43,7 @@ function LessonDetails(props) {
                 }}
                 />
             </View>
-            <View style={{ flex: 2.5 }}>
+            <View style={{ flex: 2.5, backgroundColor: 'white' }}>
                 <Text style={{ fontFamily: 'AmiriBold', fontSize: 30, color: 'grey', textAlign:'center' }}>
                 {selector.course.videos.find(c=>c.id === props.route.params.id).title.replace(regex, '')}
                 </Text>

@@ -14,28 +14,68 @@ function CourseCard(props) {
 
     return (
         <View
-       
-        style={{ direction: 'rtl',display: 'flex', flexDirection:'row-reverse', alignContent: 'center', backgroundColor: "#dddddd", width: Dimensions.get("screen").width, marginTop: 2 }}
+        style={{ display: 'flex', flexDirection:'row-reverse', alignContent: 'center',
+        justifyContent: 'center', alignItems: 'center', backgroundColor: "white", 
+        borderBottomColor: 'lightgrey',borderBottomWidth: 1,
+        width: Dimensions.get("screen").width, marginTop: 2, height: Dimensions.get('screen').height*0.15 }}
         >
-            <Image source={{uri: course.pic}} style={{ width: 120, height: 120, resizeMode: 'contain' }}/>
-            <View style={{ display: 'flex' }}>
-                <Text style={{ color: '#666', top: 30, fontFamily: 'AmiriBold', paddingRight: 10 }}>
+            <View>
+            <Image source={{uri: course.pic}} style={{ marginLeft: 10, width: 100, height: 70, resizeMode: 'contain', alignSelf: 'auto' }}/>
+            </View>
+            <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: Dimensions.get('screen').width*0.5 }}>
+                <Text style={{ flexWrap: 'wrap',
+                color: 'rgb(72, 108, 122)',
+                textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                textShadowRadius: 2,
+                fontFamily: 'AmiriBold', fontSize: 17, flexShrink: 1, paddingTop: 5, includeFontPadding: false, 
+                width: Dimensions.get('screen').width*0.6 }}>
                     {course.name}
                 </Text>
+                <Text style={{ 
+                      color: 'rgb(72, 108, 122)',
+                      fontSize: 15,
+                      textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                      textShadowRadius: 2,
+                    includeFontPadding: false, fontFamily: 'AmiriBold', textAlign: 'right', width: Dimensions.get('screen').width*0.5}}>
+                    {props.route.params.category=="free"?"محتوى مجاني":"محتوى مدفوع"}
+                </Text>
             </View>
+            <View>
             {props.route.params.category=="free"?
             <TouchableOpacity 
              onPress={()=>props.navigation.navigate("CourseLessons", {"id": course.id} )}
-            style={{ backgroundColor: 'pink', height: 40, width: 100, position: 'absolute',  bottom: 10, right: 10, borderRadius: 10, display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}><Text adjustsFontSizeToFit style={{ fontSize: 13, fontFamily: 'AmiriBold'}}>عرض المزيد </Text></TouchableOpacity>
+            style={{ backgroundColor: 'white', justifyContent: 'center', 
+            display: 'flex', alignContent:'center'
+            }}>
+                <Text adjustsFontSizeToFit style={{
+                    includeFontPadding: false,
+                      color: 'rgb(72, 108, 122)',
+                      textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                      textAlign: 'center',
+                      padding: 10,
+                      textShadowRadius: 2,borderColor: 'lightblue', borderWidth: 1,
+              borderRadius: 10, fontSize: 17, fontFamily: 'AmiriBold', backgroundColor: 'white'}}>
+                    المزيد 
+                </Text>
+            </TouchableOpacity>
             :
             <TouchableOpacity 
              onPress={()=>{ 
                  dispatch(ClearCourses())
                 props.navigation.navigate("CourseBuy", {"id": course.id} )}}
-            style={{ backgroundColor: 'pink', height: 40, width: 100, position: 'absolute', bottom: 10, right: 10, borderRadius: 10, display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
-                <Text adjustsFontSizeToFit style={{ fontSize: 13, fontFamily: 'AmiriBold'}}>شراء </Text>
+            style={{ backgroundColor: 'white', justifyContent: 'center', 
+            display: 'flex', alignContent:'center' }}>
+                <Text adjustsFontSizeToFit style={{
+                    includeFontPadding: false,
+                      color: 'rgb(72, 108, 122)',
+                      textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                      textAlign: 'center',
+                      padding: 10,
+                      textShadowRadius: 2,borderColor: 'lightblue', borderWidth: 1,
+              borderRadius: 10, fontSize: 17, fontFamily: 'AmiriBold', backgroundColor: 'white'}}>شراء </Text>
             </TouchableOpacity>
             }
+            </View>
         </View>
     )
 }

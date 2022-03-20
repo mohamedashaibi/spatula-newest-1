@@ -13,6 +13,7 @@ import CourseLessons from './TestScreens/CourseLessons';
 import LessonScroll from './TestScreens/LessonScroll';
 import {TouchableOpacity, Text, Image} from 'react-native'
 import LessonDetails from './TestScreens/LessonDetails';
+import CoursePurchase from './TestScreens/CoursePurchase';
 
 const Drawer = createDrawerNavigator();
 
@@ -34,7 +35,7 @@ export default function CustomNavigation({navigation}) {
       drawerContent={props=><DrawerContent {...props}/>} 
       useLegacyImplementation
       backBehavior="history" 
-      screenOptions={{ drawerPosition: 'left',
+      screenOptions={{ drawerPosition: 'right',
       swipeEnabled: true,
       headerTitleStyle:{
         fontFamily: 'Lateef',
@@ -123,6 +124,20 @@ export default function CustomNavigation({navigation}) {
           ({navigation}) =>({
           headerShown: true,
            headerTitle: "بيانات الكورس", drawerLabel: "بيانات الكورس"}) }  />
+
+        <Drawer.Screen component={CoursePurchase} name='CoursePurchase' options={({ navigation }) => ({ 
+             unmountOnBlur: true,
+            headerRight: () => (
+                <TouchableOpacity style={{padding:20}} onPress={()=> navigation.openDrawer()}>
+                        <Image source={require('../../assets/images/hamburger2.png')} style={{
+          width: 25,
+          resizeMode: 'contain'
+          }}/>
+                </TouchableOpacity>),
+                headerLeft: ()=>{},
+                headerShown: true, headerTitle: "عملية الشراء",
+                drawerLabel: "عملية الشراء"
+              })}  />
 
            
            <Drawer.Screen component={CourseBuy} name='CourseBuy' 

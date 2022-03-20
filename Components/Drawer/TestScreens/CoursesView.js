@@ -37,7 +37,7 @@ export const CoursesView = (props) => {
         </View>
         <View style={{ flex: 3 }}>
           <ScrollView>
-            {loading||selector.isLoading?<Loading/>:
+            {loading||selector.isLoading?<Loading />:
             selector.allcourses.map((item, index)=>{
               return <CourseCard course={item} key={index} {...props}/>
             })

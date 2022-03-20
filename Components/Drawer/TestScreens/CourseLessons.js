@@ -30,9 +30,9 @@ function CourseLessons(props) {
             <>
             <Image source={{ uri: state.course.pic }} 
             style={{flex:1, resizeMode: 'contain', backgroundColor: 'white', alignSelf:'center', width: Dimensions.get('screen').width, height: 200}}/>
-            <View style={{ flex:1 }}>
-            <Text style={{ fontSize: 30, paddingRight: 20, fontFamily: 'AmiriBold', textAlign: 'center' }}>الوصف</Text>
-            <Text style={{ paddingRight: 20, fontSize: 20, fontFamily: 'bdavat', textAlign:'center' }}>{state.course.description}</Text>    
+            <View style={{ flex:1, backgroundColor: 'white' }}>
+            <Text style={{ fontSize: 30, paddingRight: 20, fontFamily: 'AmiriBold', textAlign: 'right' }}>الوصف</Text>
+            <Text style={{ paddingRight: 20, fontSize: 20, fontFamily: 'bdavat', textAlign:'right' }}>{state.course.description}</Text>    
             </View>
             <View style={{ flex: 2, justifyContent: 'center' }}>
             <ScrollView style={{ flex:2.5, alignContent: 'flex-start' }}>

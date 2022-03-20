@@ -4,33 +4,40 @@ import CarouselCards from '../../Carousel/CarouselCards';
 import HomeCard from '../../HomeCard';
 import {WhatsappFooter} from '../../ComponentsReal/WhatsappFooter'
 import { useDispatch, useSelector } from 'react-redux';
-import { GetAds } from '../../../Redux/Actions/Courses/actions';
+import { ClearCourses, GetAds } from '../../../Redux/Actions/Courses/actions';
 
 export const Home = ({navigation}) => {
+    const selector = useSelector(state=>state.courses)
 
     const [courseMenu, setCourseMenu] = React.useState(false);
 
     const [loadingTop, setLoadingTop] = React.useState(true);
     const [loadingBottom, setLoadingBottom] = React.useState(true);
 
-    const selector = useSelector(state=>state.courses)
     const dispatch = useDispatch();
     React.useEffect(()=>{
-      dispatch(GetAds()).then(result=>{
+        dispatch(GetAds())
         setLoadingTop(false);
         setLoadingBottom(false);
-      })
+        dispatch(ClearCourses())
+        console.log("this is in home" + JSON.stringify(selector)+"okokokoko")
+        console.log("ok");
       return ()=>{
-
       }
     }, [dispatch])
 
     return (
       <View style={{ flex: 7, backgroundColor: 'white' }}>         
-        <View style={{ position: 'absolute', bottom: 100, zIndex: 400 }}>
+        <View style={{ position: 'absolute', bottom: 100, zIndex: 400, 
+        left: Dimensions.get('screen').width*0.05, borderRadius: 50,
+       shadowColor: 'black',
+       shadowOffset: { height: 2, width: 1 }, // IOS
+       shadowOpacity: 1,
+       shadowRadius: 10,
+       elevation: 5 }}>
         <TouchableOpacity style={{ backgroundColor: '#3dc4d5', width: 70, alignContent: 'center', display: 'flex',
-         height: 70, borderRadius: 50, justifyContent: 'center', alignItems: 'center', elevation: 2,
-          left: 10, shadowColor: '#000', shadowOffset: {height: 0.8, width: 1}, shadowRadius: 25 }} onPress={()=>{
+         height: 70, borderRadius: 50, justifyContent: 'center', alignItems: 'center',
+        }} onPress={()=>{
             setCourseMenu(!courseMenu)
           }}>
           <Text style={{ color: 'white', fontSize: 50 }}>+</Text>
@@ -72,8 +79,8 @@ export const Home = ({navigation}) => {
           }
         </View>
 
-        <View style={{ flex:2, backgroundColor: '#ffffffff', justifyContent: 'center', alignItems: 'center' }}>
-          <ImageBackground source={require('../../../assets/images/homebackpink.png')} style={{ width:Dimensions.get('screen').width}}>
+        <View style={{ flex:2, justifyContent: 'center', alignItems: 'center' }}>
+          <ImageBackground source={require('../../../assets/images/homebackpink.png')} style={{ width:Dimensions.get('screen').width}} resizeMode='stretch'>
           <HomeCard navigation={navigation}/>
           </ImageBackground>
         </View>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Image, View } from 'react-native'
+import { Dimensions, Image, View } from 'react-native'
 import { runOnJS } from 'react-native-reanimated'
 import Copyright from './Copyright'
 
@@ -12,24 +12,24 @@ function Loadingscreen3(props) {
     }, [])
 
     return (
-        <View style={{ flex: 4, backgroundColor: 'white' }}>
+        <View style={{ flex: 5, backgroundColor: 'white' }}>
             <View style={{flex: 1, justifyContent: 'center', paddingTop: 70 }}>
             <Image 
             style={{ 
                 alignSelf: "center",
                 resizeMode:"contain",
-                width: 250
+                width: Dimensions.get('screen').width*0.5
             }}
             source={require("../../assets/images/spatulapng.png")}
             />
             </View>
-            <View style={{flex: 2, alignContent:'center'}}>
+            <View style={{flex: 2, display: 'flex', flexDirection: 'row', alignItems: 'flex-start', alignSelf: 'center'}}>
             <Image
             style={{ 
-                alignSelf: "center",
-                justifyContent: 'space-around',
+                alignSelf: "auto",
+                justifyContent: 'center',
                 resizeMode:"center",
-                width: 330
+                width: Dimensions.get('screen').width*0.6
             }}
             source={require("../../assets/images/cake.gif")}
             />

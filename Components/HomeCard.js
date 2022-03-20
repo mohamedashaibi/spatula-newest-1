@@ -11,7 +11,7 @@ function HomeCard({navigation}) {
 
     return (
         <View style={{width: Dimensions.get('screen').width, 
-        display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}> 
+        display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}> 
             <TouchableOpacity
             style={{ 
                 alignContent: 'center',
@@ -30,11 +30,11 @@ function HomeCard({navigation}) {
                 style={{ 
                     backgroundColor: '#ffffffff',
                     resizeMode: "contain" }}
-                size={170}
+                size={160}
                 />
-                <Text style={{ position: 'absolute', fontSize: 18, paddingTop: 35, color: 'white', 
-                    textAlign: 'center', fontFamily: 'bdavat' }}>
-                     الكورسات
+                <Text style={{ position: 'absolute', fontSize: 18, color: 'white',
+                    textAlign: 'center', fontFamily: 'AmiriBold', bottom: 0  }}>
+                     الدورات
                      {"\n"}
                     المجانية
                 </Text>
@@ -45,7 +45,8 @@ function HomeCard({navigation}) {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-
+                height: Dimensions.get('screen').height /6,
+                width: Dimensions.get('screen').width /2.5,
              }}
 
              onPress={
@@ -58,11 +59,11 @@ function HomeCard({navigation}) {
                 style={{ 
                     backgroundColor: '#ffffffff',
                  resizeMode: "contain"}}
-                size={170}
+                size={160}
                 />
-                <Text style={{ position: 'absolute', fontSize: 18, color: 'white', paddingTop: 35,
-                    textAlign: 'center', fontFamily: 'bdavat'  }}>
-                     الكورسات
+                <Text style={{ position: 'absolute', fontSize: 18, color: 'white',
+                    textAlign: 'center', fontFamily: 'AmiriBold', bottom: 0  }}>
+                     الدورات
                      {"\n"}
                     المدفوعة
                 </Text>

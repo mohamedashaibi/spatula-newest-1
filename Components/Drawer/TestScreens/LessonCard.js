@@ -9,20 +9,47 @@ function LessonCard(props) {
 
     return (
     
-        <TouchableOpacity style={styles.courseCard} 
+        <TouchableOpacity
         onPress={()=>props.navigation.navigate("LessonDetails", {"id": lesson.id})}
-        style={{ display: 'flex', flexDirection:'row-reverse', alignContent: 'center', backgroundColor: "#dddddd", width: Dimensions.get("screen").width, marginTop: 2 }}
+        style={{ display: 'flex', flexDirection:'row-reverse', justifyContent: 'space-around', alignItems: 'center', alignContent: 'center',
+         backgroundColor: "white", width: Dimensions.get("screen").width, marginTop: 2 }}
         >
-            {console.log("in lesson card id = " + JSON.stringify(lesson))}
-            <Image source={require("../../../assets/images/spatulapng.png")} style={{ width: 120, height: 120, resizeMode: 'contain' }}/>
-            <View style={styles.view} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Image source={{uri: `https://dashboard.spatulagroup.com/images/recipes/${lesson.image[0].image}`}} style={{ width: 100, height: 120, resizeMode: 'contain' }}/>
+            <View style={{ display: 'flex', justifyContent: 'center', marginRight: 10 }}>
             
-                <Text style={{ fontFamily: 'AmiriBold', color: '#666', fontSize: 16 }}>
+                <Text style={{ flexWrap: 'wrap',
+                color: 'rgb(72, 108, 122)',
+                textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                textShadowRadius: 2,
+                fontFamily: 'AmiriBold', fontSize: 17, flexShrink: 1, paddingTop: 5, includeFontPadding: false, 
+                width: Dimensions.get('screen').width*0.5 }}>
                     {lesson.title}
                 </Text>
-                <Text style={{ fontFamily: 'bdavat', color: '#666' }}>
-                    <P>{lesson.description.replace(regex, '').substr(0, 8)}....</P>
+                <Text style={{ 
+                      color: 'rgb(72, 108, 122)',
+                      fontSize: 15,
+                      textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                      textShadowRadius: 2,
+                    includeFontPadding: false, fontFamily: 'AmiriBold', textAlign: 'right', width: Dimensions.get('screen').width*0.5}}>
+                    <P>{lesson.subtitle.replace(regex, '').substr(0, 20)}</P>
                 </Text>
+            </View>
+            <View>
+            <TouchableOpacity 
+            style={{ backgroundColor: 'white', justifyContent: 'center', 
+            display: 'flex', alignContent:'center'
+            }}>
+                <Text adjustsFontSizeToFit style={{
+                    includeFontPadding: false,
+                      color: 'rgb(72, 108, 122)',
+                      textShadowColor: 'rgba(0, 0, 0, 0.1)',
+                      textAlign: 'right',
+                      padding: 10,
+                      textShadowRadius: 2,borderColor: 'lightblue', borderWidth: 1,
+              borderRadius: 10, fontSize: 17, fontFamily: 'AmiriBold', backgroundColor: 'white'}}>
+                    المزيد 
+                </Text>
+            </TouchableOpacity>
             </View>
         </TouchableOpacity>
     )
