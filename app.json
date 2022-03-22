@@ -1,4 +1,5 @@
 {
+  "permissions":[],
   "expo": {
     "name": "سباتولا",
     "slug": "spatulafinal",
@@ -20,12 +21,14 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": [],
+      "versionCode": 12,
       "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.alsahl.spatula"
+      "package": "com.codanyon.spatula"
     },
     "web": {
       "favicon": "./assets/images/spatulapng.png"
