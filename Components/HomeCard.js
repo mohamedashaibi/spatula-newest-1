@@ -33,7 +33,7 @@ function HomeCard({navigation}) {
                 size={160}
                 />
                 <Text style={{ position: 'absolute', fontSize: 18, color: 'white',
-                    textAlign: 'center', fontFamily: 'AmiriBold', bottom: 0  }}>
+                    textAlign: 'center', fontFamily: 'AmiriBold1', bottom: 0  }}>
                      الدورات
                      {"\n"}
                     المجانية
@@ -62,7 +62,7 @@ function HomeCard({navigation}) {
                 size={160}
                 />
                 <Text style={{ position: 'absolute', fontSize: 18, color: 'white',
-                    textAlign: 'center', fontFamily: 'AmiriBold', bottom: 0  }}>
+                    textAlign: 'center', fontFamily: 'AmiriBold1', bottom: 0  }}>
                      الدورات
                      {"\n"}
                     المدفوعة

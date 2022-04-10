@@ -26,7 +26,7 @@ export const WhatsappFooter = () => {
             source={require("../../assets/images/whatsapplogo.png")}
             
             />
-            <Text adjustsFontSizeToFit style={{ alignSelf: 'center', fontSize: 16, color: "white", 
+            <Text adjustsFontSizeToFit style={{ alignSelf: 'center', fontSize: 20, color: "white", 
              includeFontPadding: false, fontFamily: 'AmiriBold'   }}>للمساعدة, اضغطي هنا للتواصل عبر الواتساب</Text>
             </TouchableOpacity>
         </View>

@@ -56,7 +56,7 @@ export const CourseReducer = (state=initialState, action) => {
         case GET_TRANSACTION:
             return({...state, transactionId: payload, isLoading: false})
         case FINISH_TRANSACTION:
-            return({...state, transactionId: '', operationStatusCode: payload.operationStatusCode + '', isLoading: false})    
+            return({...state, transactionId: '', operationStatusCode: payload.operationStatusCode, isLoading: false})    
         case GET_ADVERTS:
             return({...state, topAds: [...payload.tops], bottomAds: [...payload.bottom], isLoading: false})   
         default:

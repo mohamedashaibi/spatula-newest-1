@@ -37,21 +37,21 @@ function CourseBuy(props) {
             <View style={{ flex: 4.5 }}>
                 <Image source={{uri: state.course.pic}} style={{ flex: 1.5, resizeMode: 'contain', backgroundColor: 'white' }}/>
                 <View style={{flex: 2, padding: 30}}>
-                <Text adjustsFontSizeToFit numberOfLines={1} style={{ includeFontPadding: false, textAlign: 'right', fontFamily: 'AmiriBold', fontSize: 30 }}>
+                <Text adjustsFontSizeToFit numberOfLines={1} style={{   textAlign: 'right', color: '#666', fontFamily: 'AmiriBold1', fontSize: 30 }}>
                     الوصف
                 </Text>
-                <Text adjustsFontSizeToFit style={{ includeFontPadding: false, fontFamily: 'Lateef', fontSize: 20, textAlign:'right' }}>
+                <Text adjustsFontSizeToFit style={{ fontFamily: 'Lateef', fontSize: 25, textAlign:'right' }}>
                 {state.course.description}
                 </Text>
-                <Text style={{ fontFamily: 'AmiriBold', fontSize: 30, textAlign:'center', textAlign: 'right' }}>
+                <Text style={{ fontFamily: 'AmiriBold1', fontSize: 30, color: '#666', textAlign:'center', textAlign: 'right' }}>
                     ثمن الشراء
                 </Text>
-                <Text style={{ fontFamily: 'Lateef', fontSize: 20, textAlign:'right' }}>
+                <Text style={{ fontFamily: 'Lateef', fontSize: 25, textAlign:'right' }}>
                     {state.course.price} دينار ليبي
                 </Text>
                 <TouchableOpacity style={{ marginTop: 30, alignSelf: 'center', backgroundColor: '#ff9999',  display: 'flex', justifyContent:'center', alignItems:'center', width: Dimensions.get('screen').width/2.5, borderRadius: 10 }} 
             onPress={()=>{props.navigation.navigate("CoursePurchase", {"id": state.course.id})}}>
-                <Text adjustsFontSizeToFit style={{  textAlign:'center' ,color: "white", alignSelf: 'center', fontSize: 30, includeFontPadding: false, fontFamily: 'AmiriBold',
+                <Text adjustsFontSizeToFit style={{  textAlign:'center' ,color: "white", alignSelf: 'center', fontSize: 30, includeFontPadding: false, fontFamily: 'AmiriBold1',
             textShadowColor: '#aaa', textShadowOffset: { width: 0.5, height: 1 }, textShadowRadius: 4, paddingBottom: 2}}>
                     شراء
                 </Text>

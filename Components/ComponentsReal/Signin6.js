@@ -30,8 +30,8 @@ function Signin6(props) {
             </View>
             <View style={{ flex:1 }}>
             <TouchableOpacity>
-            <Text adjustsFontSizeToFit style={{ fontSize: 25, padding: 20, textAlign: 'center', fontFamily: 'Lateef' }}>
-                لتتمكن من تسجيل الدخول الى سباتولا يرجى استخدام واحدة من الطرق الاتية
+            <Text adjustsFontSizeToFit style={{ fontSize: 27, padding: 20, textAlign: 'center', fontFamily: 'Lateef' }}>
+                لتتمكن/ي من تسجيل الدخول الى سباتولا يرجى استخدام واحدة من الطرق الاتية
             </Text>
             
             </TouchableOpacity>

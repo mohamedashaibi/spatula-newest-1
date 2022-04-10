@@ -37,32 +37,32 @@ function CoursePurchase(props) {
     return (
         <>
         {loading?<Loading/>:
-        inPayment?<InPayment status={paymentStatus} show={inPayment}/>:
+        inPayment?<InPayment status={state.operationStatusCode} show={inPayment}/>:
         <View style={{ backgroundColor: 'white', height: Dimensions.get('screen').height }}>
             <View style={{ height: Dimensions.get('screen').height*0.3, backgroundColor: 'white' }}>
                 <View style={{ padding: 30}}>
-                <View style={{display: 'flex', justifyContent: 'space-between', 
+                <View style={{display: 'flex', justifyContent: 'center', 
                 borderBottomColor: 'grey', borderBottomWidth: 1, flexDirection: 'row-reverse', alignItems: 'center'}}>
                     <Text adjustsFontSizeToFit allowFontScaling numberOfLines={1} style={{ color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
-                textShadowRadius: 2,textAlign: 'center',fontFamily: 'AmiriBold', fontSize: 25 }}>
+                textShadowRadius: 2,textAlign: 'center',fontFamily: 'AmiriBold1', fontSize: 25 }}>
                     حول العملية :
                     </Text> 
-                    <Text adjustsFontSizeToFit allowFontScaling numberOfLines={1} style={{ textAlign: 'center',fontFamily: 'AmiriBold', fontSize: 20,color: 'rgb(72, 108, 122)',
+                    <Text adjustsFontSizeToFit numberOfLines={1} style={{ includeFontPadding: false,  textAlign: 'center',fontFamily: 'AmiriBold1', fontSize: 20,color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
                 textShadowRadius: 2 }}>
                     {state.course.name}
                     </Text>
                 </View>
-                <View style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row-reverse', alignItems: 'center'}}>
-                <Text style={{ fontFamily: 'AmiriBold', fontSize: 25, textAlign:'center',color: 'rgb(72, 108, 122)',
+                <View style={{display: 'flex', justifyContent: 'center', flexDirection: 'row-reverse', alignItems: 'center'}}>
+                <Text allowFontScaling adjustsFontSizeToFit numberOfLines={1} style={{ includeFontPadding:false, fontFamily: 'AmiriBold1', fontSize: 25, textAlign:'center',color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
                 textShadowRadius: 2,  }}>
                          قيمة المبلغ :
                     </Text>
                     <Text style={{ color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
-                textShadowRadius: 2,fontFamily: 'AmiriBold', fontSize: 20, textAlign:'center', width: Dimensions.get('screen').width/2 }}>
+                textShadowRadius: 2,fontFamily: 'AmiriBold1', includeFontPadding: false, fontSize: 20, textAlign:'center'}}>
                         {state.course.price} دينار ليبي
                     </Text>
                 </View>
@@ -103,15 +103,15 @@ function CoursePurchase(props) {
                     }}>
                         <Text style={{ color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
-                textShadowRadius: 2,textAlign:'right', fontFamily: 'AmiriBold', color: '#dd7777' }}>
+                textShadowRadius: 2,textAlign:'right', fontFamily: 'AmiriBold1', fontSize: 20, color: '#dd7777' }}>
                             تأكيد الشراء
                         </Text>
                         <Text style={{color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
-                textShadowRadius: 2, textAlign:'right', fontFamily: 'AmiriBold' }}>
+                textShadowRadius: 2, textAlign:'right', fontFamily: 'AmiriBold1', fontSize: 15 }}>
                             ادخل رمز تأكيد الشراء المرسل الى الرقم {phoneValue} مكون من 6 ارقام
                         </Text>
-                 <TextInput  onChangeText={newText=>{
+                 <TextInput  accessibilityViewIsModal keyboardType='number-pad' onChangeText={newText=>{
                     setPinCode(newText);
                 }} style={{ marginBottom: 10 ,borderColor: 'grey', fontSize: 20, borderWidth: 1, width: Dimensions.get('screen').width*0.7, 
                 borderRadius: 10, padding: 10, textAlign:'center', backgroundColor: 'white' }}/>         
@@ -134,7 +134,7 @@ function CoursePurchase(props) {
                             },6000)
                         })
                     }}>
-                        <Text style={{ fontFamily: 'AmiriBold', color: '#dd7777' }}>
+                        <Text style={{ fontFamily: 'AmiriBold1', fontSize: 20, color: '#dd7777' }}>
                              إكمال الشراء
                         </Text>
                     </TouchableOpacity>
@@ -142,7 +142,7 @@ function CoursePurchase(props) {
                         setPhone('')
                         setPhoneValid(false)
                         setShowConfirm(false)}}>
-                        <Text style={{ fontFamily: 'AmiriBold', color: '#dd7777' }}>
+                        <Text style={{fontFamily: 'AmiriBold1', fontSize: 20, color: '#dd7777' }}>
                             تغيير الرقم
                         </Text>
                     </TouchableOpacity>
@@ -155,7 +155,7 @@ function CoursePurchase(props) {
 
 
             <View style={{ display: 'flex', justifyContent:'center', alignItems: 'center', backgroundColor: 'white' }}>
-            <Text style={{ fontSize: 20, fontFamily: 'AmiriBold', marginBottom: 5,color: 'rgb(72, 108, 122)',
+            <Text style={{ fontSize: 20, fontFamily: 'AmiriBold1', marginBottom: 5,color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
                 textShadowRadius: 2, }}>
                 يرجى إدخال رقم هاتف للاستمرار
@@ -181,12 +181,12 @@ function CoursePurchase(props) {
                     setShowConfirm(false)
                 }
                 setShowConfirm(true)})}>
-                <Text adjustsFontSizeToFit style={{  textAlign:'center' ,color: "white", fontSize: 25,  fontFamily: 'AmiriBold', includeFontPadding: false,
+                <Text adjustsFontSizeToFit style={{  textAlign:'center' ,color: "white", fontSize: 25,  fontFamily: 'AmiriBold1', includeFontPadding: false,
             textShadowColor: '#aaa', textShadowOffset: { width: 0.5, height: 1 }, textShadowRadius: 4, paddingBottom: 2}}>
                     شراء
                 </Text>
             </TouchableOpacity>:
-            <Text adjustsFontSizeToFit style={{ fontFamily: 'AmiriBold', color: 'darkred', fontSize: 15, width: Dimensions.get('screen').width*0.6, textAlign:'center' }}>
+            <Text adjustsFontSizeToFit style={{ fontFamily: 'AmiriBold1', color: 'darkred', fontSize: 15, width: Dimensions.get('screen').width*0.6, textAlign:'center' }}>
                 يجب ان يكون الرقم مكون من 10 ارقام وان يبدأ ب 092 او 094
             </Text>}
             </View>

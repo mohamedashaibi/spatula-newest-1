@@ -205,6 +205,6 @@ const styles = StyleSheet.create({
     drawerItemText:{
         color: '#666',
         fontSize: 20,
-        fontFamily: 'AmiriBold'
+        fontFamily: 'AmiriBold1'
     }
   });

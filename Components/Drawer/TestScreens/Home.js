@@ -54,7 +54,7 @@ export const Home = ({navigation}) => {
             }
         }
           >
-            <Text style={{ textAlign: 'center',  fontSize: 23, fontFamily: 'Lateef' }}>الكورسات المجانية</Text>
+            <Text style={{ includeFontPadding: false, textAlign: 'center',  fontSize: 20, fontFamily: 'AmiriBold1' }}>الكورسات المجانية</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ backgroundColor: 'white', 
           textAlign: 'center', borderWidth: 1, width: 170, borderRadius: 10, height: 40 }}
@@ -66,7 +66,7 @@ export const Home = ({navigation}) => {
             }
         }
           >
-            <Text style={{ textAlign: 'center',  fontSize: 23, fontFamily: 'Lateef' }}>الكورسات المدفوعة</Text>
+            <Text style={{ includeFontPadding:false, textAlign: 'center',  fontSize: 20, fontFamily: 'AmiriBold1' }}>الكورسات المدفوعة</Text>
           </TouchableOpacity>
         </View>:null
         }

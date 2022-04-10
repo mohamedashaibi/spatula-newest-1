@@ -53,8 +53,9 @@ const App2 = () => {
 
 const customFonts = {
   Lateef: require("./assets/fonts/Lateef.ttf"),
-  bdavat: require("./assets/fonts/bdavat.ttf"),
-  AmiriBold: require("./assets/fonts/Amiri-Bold.ttf"),
+  bdavat: require("./assets/fonts/Lateef.ttf"),
+  AmiriBold: require("./assets/fonts/Lateef.ttf"),
+  AmiriBold1: require("./assets/fonts/Amiri-Bold.ttf"),
 };
 
 const App = () =>{

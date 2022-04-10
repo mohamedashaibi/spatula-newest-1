@@ -21,13 +21,13 @@ function LessonCard(props) {
                 color: 'rgb(72, 108, 122)',
                 textShadowColor: 'rgba(0, 0, 0, 0.1)',
                 textShadowRadius: 2,
-                fontFamily: 'AmiriBold', fontSize: 17, flexShrink: 1, paddingTop: 5, includeFontPadding: false, 
+                fontFamily: 'AmiriBold', fontSize: 25, flexShrink: 1, paddingTop: 5, includeFontPadding: false, 
                 width: Dimensions.get('screen').width*0.5 }}>
                     {lesson.title}
                 </Text>
                 <Text style={{ 
                       color: 'rgb(72, 108, 122)',
-                      fontSize: 15,
+                      fontSize: 20,
                       textShadowColor: 'rgba(0, 0, 0, 0.1)',
                       textShadowRadius: 2,
                     includeFontPadding: false, fontFamily: 'AmiriBold', textAlign: 'right', width: Dimensions.get('screen').width*0.5}}>
@@ -46,7 +46,7 @@ function LessonCard(props) {
                       textAlign: 'right',
                       padding: 10,
                       textShadowRadius: 2,borderColor: 'lightblue', borderWidth: 1,
-              borderRadius: 10, fontSize: 17, fontFamily: 'AmiriBold', backgroundColor: 'white'}}>
+              borderRadius: 10, fontSize: 24, fontFamily: 'AmiriBold', backgroundColor: 'white'}}>
                     المزيد 
                 </Text>
             </TouchableOpacity>

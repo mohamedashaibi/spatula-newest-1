@@ -31,7 +31,9 @@ function LessonDetails(props) {
             <WebView
                 userAgent="Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3714.0 Mobile Safari/537.36"
                 allowsFullscreenVideo
-                containerStyle={{ width:Dimensions.get('screen').width, padding: 0 }}
+                style={{ height: 350, width: "100%", resizeMode: 'cover', flex: 1 }}
+                injectedJavaScript={`const meta = document.createElement('meta'); meta.setAttribute('content', 'width=width, initial-scale=0.5, maximum-scale=0.5, user-scalable=2.0'); meta.setAttribute('name', 'viewport'); document.getElementsByTagName('head')[0].appendChild(meta); `}
+                scalesPageToFit={false}
                 scrollEnabled={false}
                 source={{
                     html: `
@@ -44,10 +46,10 @@ function LessonDetails(props) {
                 />
             </View>
             <View style={{ flex: 2.5, backgroundColor: 'white' }}>
-                <Text style={{ fontFamily: 'AmiriBold', fontSize: 30, color: 'grey', textAlign:'center' }}>
+                <Text style={{ fontFamily: 'AmiriBold1', fontSize: 26, color: 'grey', textAlign:'center' }}>
                 {selector.course.videos.find(c=>c.id === props.route.params.id).title.replace(regex, '')}
                 </Text>
-                <Text style={{ fontFamily: 'AmiriBold', fontSize: 25, color: 'grey', textAlign: 'center' }}>
+                <Text style={{ fontFamily: 'AmiriBold', fontSize: 30, color: 'grey', textAlign: 'center' }}>
                 {selector.course.videos.find(c=>c.id === props.route.params.id).description.replace(regex, '')}
 
                 </Text>
@@ -55,31 +57,31 @@ function LessonDetails(props) {
                 <List.Section>
       <List.Accordion
         style={{  }}
-        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 20, fontFamily: 'AmiriBold'}}
+        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 30, fontFamily: 'AmiriBold'}}
         title="نبذة عن الفيديو والمحتوى"
         >
-        <List.Item titleStyle={{ paddingRight: 20,textAlign: 'right', color: 'grey', fontSize: 20, fontFamily:'AmiriBold'}} title={selector.course.videos.find(c=>c.id === props.route.params.id).description.replace(regex, '')}/>
+        <List.Item titleStyle={{ paddingRight: 30,textAlign: 'right', color: 'grey', fontSize: 30, fontFamily:'AmiriBold'}} title={selector.course.videos.find(c=>c.id === props.route.params.id).description.replace(regex, '')}/>
         
       </List.Accordion>
       <List.Accordion
         style={{  }}
-        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 20, fontFamily: 'AmiriBold'}}
+        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 30, fontFamily: 'AmiriBold'}}
         title="تحذيرات اثناء اعداد هذه الوصفة"
         >
-        <List.Item titleStyle={{ paddingRight: 20,textAlign: 'right', color: 'grey', fontSize: 20, fontFamily:'AmiriBold'}} title={selector.course.videos.find(c=>c.id === props.route.params.id).warning.replace(regex, '')}/>
+        <List.Item titleStyle={{ paddingRight: 30,textAlign: 'right', color: 'grey', fontSize: 30, fontFamily:'AmiriBold'}} title={selector.course.videos.find(c=>c.id === props.route.params.id).warning.replace(regex, '')}/>
             
       </List.Accordion>
       <List.Accordion
         style={{  }}
-        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 20, fontFamily: 'AmiriBold'}}
+        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 30, fontFamily: 'AmiriBold'}}
         title="المقادير المستخدمة"
         >
-        <List.Item titleStyle={{ paddingRight: 20,textAlign: 'right', color: 'grey', fontSize: 20, fontFamily:'AmiriBold'}} title={selector.course.videos.find(c=>c.id === props.route.params.id).ingredient.replace(regex, '')}/>
+        <List.Item titleStyle={{ paddingRight: 30,textAlign: 'right', color: 'grey', fontSize: 30, fontFamily:'AmiriBold'}} title={selector.course.videos.find(c=>c.id === props.route.params.id).ingredient.replace(regex, '')}/>
             
       </List.Accordion>
       <List.Accordion
         style={{  }}
-        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 20, fontFamily: 'AmiriBold'}}
+        titleStyle={{ color: 'grey', textAlign:'right',  fontSize: 30, fontFamily: 'AmiriBold'}}
         title="معرض الصور"
         >
           {console.log("ImAGE = " + JSON.stringify(selector.course.videos.find(c=>c.id === props.route.params.id).image))}
